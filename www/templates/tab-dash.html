@@ -1,0 +1,46 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-divider">Recent Updates</div>
+      <div class="item item-body">
+          <div class="row">
+            <div class="col">
+              <button ng-click = "getData()" class="button button-block button-positive">
+                Get
+              </button>
+            </div>
+
+            <div class="col col-50">
+              <button ng-click = "showData()" class="button button-block button-positive">
+                Show
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button ng-click = "addData()" class="button button-block button-positive">
+                Add
+              </button>
+
+              <div class="col">
+              <button ng-click = "delData()" class="button button-block button-positive">
+                Del
+              </button>
+            </div>
+
+          </div>
+          <!-- <p>Mensaje <b>{{myObj[0].firstname}}</b></p>  -->
+      </div> 
+    </div>
+
+     <!-- Lita de contenidos -->
+      <ul class="list">
+        <li class="item" ng-repeat="transaccion in transacciones">
+          <h2>Número: {{transaccion.numero}}</h2>
+          <p>Valor: <b>{{transaccion.valor |currency:undefined:0}}</b> - Fecha <b>{{transaccion.fecha}}</b></p>
+          <p>Estado: <b>{{transaccion.estado}}</b> - Código: <b>{{transaccion.autorizacion}}</b></p>
+        </li>
+
+  </ion-content>
+</ion-view>
